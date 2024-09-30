@@ -24,7 +24,7 @@ jobs:
             username: ${{ secrets.ACR_USERNAME }}
             password: ${{ secrets.ACR_PASSWORD }}
 
-        -name: Get current date in yyyymmdd format
+        - name: Get current date in yyyymmdd format
           run: echo "DATE+TIME=$(date + '%Y%m%d')" >> $GITHUB_ENV
 
         - name: 'Build and push container image'
