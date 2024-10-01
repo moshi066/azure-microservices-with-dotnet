@@ -7,7 +7,7 @@ namespace Wpm.Management.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PetsController(ManagementDbContext dbContext, Logger<PetsController> logger) : ControllerBase
+public class PetsController(ManagementDbContext dbContext, ILogger<PetsController> logger) : ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> Get()
