@@ -21,7 +21,8 @@ builder.Services.AddDbContext<ClinicDbContext>(options =>
 });
 builder.Services.AddHttpClient<ManagementService>(client =>
 {
-    var uri = builder.Configuration.GetValue<string>("Wpm:ManagementUri");
+    var uri = builder.Configuration.GetValue<string>("Wpm__ManagementUri") ??
+        builder.Configuration.GetValue<string>("Wpm:ManagementUri");
     client.BaseAddress = new Uri(uri);
 }).AddResilienceHandler("management-pipeline", builder =>
 {
