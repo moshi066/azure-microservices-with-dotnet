@@ -6,7 +6,7 @@ namespace Wpm.Clinic.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ClinicController(ClinicApplicationService applicationService) : ControllerBase
+public class ConsulationController(ClinicApplicationService applicationService) : ControllerBase
 {
     [HttpPost("start")]
     public async Task<IActionResult> Start(StartConsultationCommand command)
