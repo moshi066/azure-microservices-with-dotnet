@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: Wpm.Management.Api/Dockerfile
+
+  wpm.clinic.api:
+    image: ${DOCKER_REGISTRY-}wpmclinic
+    build:
+      context: .
+      dockerfile: Wpm.Clinic.Api/Dockerfile
+
